@@ -41,7 +41,7 @@ allowed_host_env = os.environ.get('ALLOWED_HOST')
 
 allowed_host = [host.strip() for host in allowed_host_env.split(',')]
 ALLOWED_HOSTS = allowed_host
-print(ALLOWED_HOSTS)
+
 
 
 # Application definition
@@ -63,7 +63,8 @@ INSTALLED_APPS = [
 
     # Locals
     'users.apps.UsersConfig',
-    'pages.apps.PagesConfig'
+    'pages.apps.PagesConfig',
+    'books.apps.BooksConfig'
 ]
 
 
@@ -182,4 +183,7 @@ AUTHENTICATION_BACKENDS = (
 # Email upon successful registration
 # This email is only sent to the development console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+DEFAULT_FROM_EMAIL = 'admin@buybooks.com'
+
 
